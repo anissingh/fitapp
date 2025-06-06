@@ -1,0 +1,15 @@
+# Node.js
+frontend/node_modules/
+frontend/.env
+frontend/build
+frontend/.next
+frontend/dist/
+
+# Mac OS
+.DS_Store
+
+# IntelliJ
+.idea/
+
+# Logs
+*.log
