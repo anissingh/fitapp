@@ -1,0 +1,10 @@
+name: fitapp
+version: "3.9"
+
+services:
+  frontend:
+    build: ./frontend
+    image: fitapp-frontend:dev
+    pull_policy: missing
+    ports:
+      - "3000:3000"
