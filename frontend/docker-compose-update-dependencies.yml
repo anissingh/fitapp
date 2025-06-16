@@ -1,0 +1,16 @@
+name: fitappdep
+version: "3.9"
+
+services:
+  updatedeps:
+    volumes:
+      - type: bind
+        source: ./package.json
+        target: /usr/src/app/package.json
+      - type: bind
+        source: ./package-lock.json
+        target: /usr/src/app/package-lock.json
+    build: .
+    stdin_open: true
+    tty: true
+    command: sh
