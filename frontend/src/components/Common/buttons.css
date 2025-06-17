@@ -1,0 +1,13 @@
+.rounded-btn {
+    border-radius: 10vmin;
+}
+
+.inverted-colour-btn {
+    background-color: #01062b;
+    color: #2b70f0;
+}
+
+.standard-colour-btn {
+    background-color: #2b70f0;
+    color: #01062b;
+}

@@ -1,0 +1,26 @@
+#auth-container-wrapper {
+    height: 100vh;
+}
+
+#auth-header-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#auth-image-container {
+    height: 50vh;
+}
+
+#auth-btn-container {
+    row-gap: 0.5vh;
+}
+
+.auth-header-subtitle {
+    color: #757171;
+}
+
+.auth-header-title {
+    color: #2b70f0;
+}
+
+

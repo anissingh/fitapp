@@ -1,5 +1,5 @@
 import './App.css';
-import {Home} from "./pages/home";
+import {Auth} from "./pages/auth";
 import {BrowserRouter, Route, Routes} from "react-router";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/">
-                    <Route path="" element={<Home />}></Route>
+                    <Route path="" element={<Auth />}></Route>
                 </Route>
             </Routes>
         </BrowserRouter>
