@@ -8,3 +8,9 @@ services:
     pull_policy: missing
     ports:
       - "3000:3000"
+  backend:
+    build: ./backend
+    image: fitapp-backend:dev
+    pull_policy: missing
+    ports:
+      - "8080:8080"
