@@ -10,11 +10,12 @@ RUN mvn -f /home/app/pom.xml clean package
 # Package
 FROM openjdk:17-jdk-slim as package
 LABEL authors="anissingh"
-WORKDIR /usr/src/app
+ENV APP_HOME=/usr/src/app
+WORKDIR ${APP_HOME}
 RUN groupadd spring && useradd spring -g spring
-RUN chown -R spring:spring /usr/src/app && chmod g+s /usr/src/app
+RUN chown -R spring:spring ${APP_HOME} && chmod g+s ${APP_HOME}
 ARG JAR_VERSION=0.0.1-SNAPSHOT
 COPY --from=build --chown=spring:spring /home/app/target/backend-${JAR_VERSION}.jar ./backend.jar
 EXPOSE 8080
 USER spring:spring
-ENTRYPOINT ["java", "-jar", "/usr/src/app/backend.jar"]
+ENTRYPOINT ["java", "-jar", "./backend.jar"]

@@ -4,7 +4,8 @@ FROM node:24.2.0-alpine as build
 LABEL authors="anissingh"
 
 # Set working directory to be something other than /
-WORKDIR /usr/src/app
+ENV APP_HOME=/usr/src/app
+WORKDIR ${APP_HOME}
 
 # Copy only files required to install dependencies
 # Improves layer caching
@@ -15,10 +16,10 @@ RUN npm ci
 
 # Set permissions for node user and set ownership of all files created
 # in WORKDIR and node_modules.
-RUN chown -R node:node /usr/src/app &&  \
-    chmod g+s /usr/src/app &&  \
-    chown -R node:node /usr/src/app/node_modules && \
-    chmod g+s /usr/src/app/node_modules
+RUN chown -R node:node ${APP_HOME} &&  \
+    chmod g+s ${APP_HOME} &&  \
+    chown -R node:node ${APP_HOME}/node_modules && \
+    chmod g+s ${APP_HOME}/node_modules
 
 # Copy remaining files
 COPY --chown=node:node . .
