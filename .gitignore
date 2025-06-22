@@ -13,3 +13,6 @@ frontend/dist/
 
 # Logs
 *.log
+
+# Env
+*.env
